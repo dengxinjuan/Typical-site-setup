@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"
+      async=""
+    ></script>
+    <script>
+      window.OneSignal = window.OneSignal || [];
+      OneSignal.push(function () {
+        OneSignal.init({
+          appId: "fa9f9604-ddde-4567-b643-2ff3dc1430d4",
+        });
+      });
+
+      function setEmail() {
+        const email = prompt("Please enter your email", "example@domain.com");
+        if (email !== null) {
+          OneSignal.push(function () {
+            OneSignal.setEmail(email).then(function (emailId) {
+              // Callback called when email have finished sending
+              console.log("emailId: ", emailId);
+              /*Creating a user_name identifier tag to be used in the email
+                            Example: OneSignal.sendTag("user_name", "devpato");   
+                        */
+              OneSignal.sendTag("user_name", "a_user_name");
+            });
+          });
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h2>This is the Xinjuan new testing page for oneSignal</h2>
+    <button>Welcome!</button>
+    <button>Payment!</button>
+    <button onclick="setEmail()">Set Email</button>
+  </body>
+</html>
