@@ -1,2 +1,5 @@
 # Typical-site-setup
-why github page theme run over my content?
+
+deploy by netify:
+
+https://dulcet-moonbeam-93bd5c.netlify.app/
