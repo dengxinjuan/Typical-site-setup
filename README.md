@@ -1,0 +1,1 @@
+# Typical-site-setup
